@@ -1,0 +1,24 @@
+<script id="campaign-listing-template" type="x-tmpl-mustache">
+  <div class="campaign">
+    <hr>
+    <h2>
+      <a href= "javascript:void(0);" class="title" data-id="{{id}}">{{title}}</a>
+    </h2>
+    <p>{{details}}</p>
+    <h3>{{target}}</h3>
+  </div>
+</script>
+<script id="single-campaign-display" type="x-tmpl-mustache">
+  <h1>{{title}}</h1>
+  <p>Details: {{details}}</p>
+  <p>End Date: {{end_date}}</p>
+</script>
+
+
+<h1>Welcome to Crowdfundy!</h1>
+<h5>Brought to you by Funderful</h5>
+
+
+
+<div id="campaigns"></div>
+<div id="single-campaign-container"></div>

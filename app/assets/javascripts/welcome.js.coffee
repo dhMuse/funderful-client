@@ -1,12 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 $ ->
   $.ajax
     url: "http://localhost:3000/api/v1/campaigns"
     dataType: "json"
     method: "get"
+    data:
+      access_token: "8a821b27dea0720bb4f6829215dd4b4a"
     error: ->
       alert("error")
     success: (data) ->
@@ -20,6 +18,8 @@ $ ->
       url: "http://localhost:3000/api/v1/campaigns/" + $(@).data("id")
       dataType: "json"
       method: "get"
+      data:
+        access_token: "8a821b27dea0720bb4f6829215dd4b4a"
       error: ->
         alert("Error")
       success: (data) ->
@@ -30,3 +30,6 @@ $ ->
         $("#campaigns").fadeOut 700, ->
           $("#single-campaign-container").fadeIn(300)
     false
+  $("#single-campaign-container").on "click", ".back", ->
+    $("#single-campaign-container").fadeOut 700, ->
+      $("#campaigns").fadeIn(300)
